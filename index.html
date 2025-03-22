@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>帅哥</title>
+<script>
+// 定义一个标志变量，用于控制按钮的移动
+let flag = 1;
+
+function f1() {
+    // 点击“帅哥！”按钮后显示的警示框
+    alert('真不错谢谢！！');
+}
+
+function f() {
+    // 鼠标移动到“你sb吧！”按钮上时，改变按钮的位置
+	const Bn = document.getElementById('Bn');
+	const aWidth = document.body.clientWidth || document.documentElement.clientWidth;
+	const aHeight = document.body.clientHeight || document.documentElement.clientHeight;
+	const sJs1 = Math.floor(Math.random() * aHeight);
+	const sJs2 = Math.floor(Math.random() * aWidth);
+
+	if (flag === 1) {
+        Bn.style.top = sJs1 + 'px';
+        Bn.style.left = sJs2 + 'px';
+        flag = 2;
+    } else if (flag === 2) {
+        Bn.style.top = sJs1 + 'px';
+        Bn.style.left = sJs2 + 'px';
+        flag = 3;
+    } else if (flag === 3) {
+        Bn.style.top = '235px';
+        Bn.style.left = '286px';
+        flag = 4;
+    } else if (flag === 4) {
+        Bn.style.top = '235px';
+        Bn.style.left = '360px';
+        flag = 1;
+    }
+}
+
+function f2() {
+    // 另一个警示框函数
+    alert('这不是你的真心话！');
+}
+</script>
+</head>
+<body>
+<!-- 这是大标题头 -->
+<h1 style="position:absolute; left:280px; top:155px; width:auto; height:210px;">我是帅哥吗？</h1>
+<!-- 这是第一个不会动的按钮 -->
+<div id="By" style="position:absolute; left:285px; top:235px;height:30px;">
+    <input type="button" value=" 帅哥！ " onclick="f1()" />
+    <!-- onclick() 若鼠标点击标签，则会触发函数。 -->
+</div>
+<!-- 这是第二个到处跑的按钮 -->
+<div id="Bn" style="position:absolute; left:360px; top:235px;">
+    <input type="button" value=" 你sb吧！ " onmouseover="f()" />
+    <!-- onmouseover() 若鼠标移动到标签上，则会触发函数。 -->
+</div>
+</body>
+</html>
